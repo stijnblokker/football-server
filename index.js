@@ -5,18 +5,18 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const bodyParserMiddleWare = bodyParser.json();
 const corsMiddleWare = cors();
-const authMiddleWare = require("./auth/middleware");
+// const authMiddleWare = require("./auth/middleware");
 
 // Routers
 const teamRouter = require("./team/router");
 const playerRouter = require("./player/router");
-const authRouter = require("./auth/router");
-const userRouter = require("./user/router");
+// const authRouter = require("./auth/router");
+// const userRouter = require("./user/router");
 
 // Models & DB
 const Team = require("./team/model");
 const Player = require("./player/model");
-const User = require("./user/model");
+// const User = require("./user/model");
 const db = require("./db");
 
 // Init
@@ -39,8 +39,8 @@ app
   .use(loggingMiddleWare)
   .use(corsMiddleWare)
   .use(bodyParserMiddleWare)
-  .use(userRouter)
-  .use(authRouter)
+  // .use(userRouter)
+  // .use(authRouter)
   .use(playerRouter)
   .use(teamRouter)
   .listen(port, () => {
