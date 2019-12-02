@@ -28,15 +28,15 @@ const port = process.env.PORT || 4000;
 // - make sure to app.use(bodyparser) before doing app.use(blablRouter)
 // - order matters here (wtf?) -> probably for a good reason
 
-const loggingMiddleWare = (req, res, next) => {
-  console.log("I am a middleware", Date.now());
-  next(); // everything is ok -> next()
-};
+// const loggingMiddleWare = (req, res, next) => {
+//   console.log("I am a middleware", Date.now());
+//   next(); // everything is ok -> next()
+// };
 
 app
   // use auth middleware for entire routers (maybe a bit heavy handed)
   // .use(authMiddleWare)
-  .use(loggingMiddleWare)
+  // .use(loggingMiddleWare)
   .use(corsMiddleWare)
   .use(bodyParserMiddleWare)
   // .use(userRouter)
