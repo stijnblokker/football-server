@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const Team = require("./model");
 const Player = require("../player/model");
-const authMiddleWare = require("../auth/middleware");
+// const authMiddleWare = require("../auth/middleware");
 
 const router = new Router();
 
@@ -22,7 +22,7 @@ router.get("/teams/:teamId", (req, res, next) => {
 });
 
 // Create a new team account
-router.post("/teams", authMiddleWare, (req, res, next) => {
+router.post("/teams", (req, res, next) => {
   console.log("Do we have the user of this request?", req.user);
   // since this was an authenticated route, we now have req.user
   // it contains all info about this user (actually req.user is a Sequelize User instance)
