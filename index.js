@@ -57,26 +57,25 @@ db.sync({ force: true })
     // return Promise.all([team, team2])
 
     // Script that iterates over arrays and creates rows in the database for them
-    const teamNames = ["Egel", "Das", "Eagle", "Pinguin"];
+    const teamNames = ["Ajax", "Feyenoord", "AZ", "SC Heerenveen"];
 
     const teams = teamNames.map(teamName => Team.create({ name: teamName }));
     return Promise.all(teams);
   })
   .then(() => {
     const players = [
-      { name: "Mimi", number: 4, teamId: 1 },
-      { name: "Wouter", number: 1, teamId: 2 },
-      { name: "David", number: 9, teamId: 3 },
-      { name: "Bram", number: 8, teamId: 4 },
-      { name: "Lisa", number: 10, teamId: 1 },
-      { name: "Miloud", number: 2, teamId: 2 },
-      { name: "Violeta", number: 3, teamId: 3 },
-      { name: "Johan", number: 5, teamId: 4 },
-      { name: "Danny", number: 6, teamId: 3 },
-      { name: "Rembert", number: 7, teamId: 2 },
-      { name: "Kelley", number: 10, teamId: 1 },
-      { name: "Jeroen", number: 12, teamId: 4 },
-      { name: "Rein", number: 11, teamId: 2 }
+      { name: "Andre Onana", number: 24, teamId: 1 },
+      { name: "Donny Van De Beek", number: 6, teamId: 1 },
+      { name: "Hakim Ziyech", number: 22, teamId: 1 },
+      { name: "Kenneth Vermeer", number: 1, teamId: 2 },
+      { name: "Jens Toornstra", number: 28, teamId: 2 },
+      { name: "Steven Berghuis", number: 10, teamId: 2 },
+      { name: "Marco Bizot", number: 1, teamId: 3 },
+      { name: "Ron Vlaar", number: 4, teamId: 3 },
+      { name: "Myron Boadu", number: 9, teamId: 3 },
+      { name: "Warner Hahn", number: 1, teamId: 4 },
+      { name: "Sven Botman", number: 18, teamId: 4 },
+      { name: "Jens Odgaard", number: 9, teamId: 4 }
     ];
 
     const playerPromises = players.map(player => Player.create(player));
